@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5096997741912631394, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8135600616756828785, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,6 +230,11 @@ PrefabInstance:
     - target: {fileID: 774478244566859902, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: IsPlayer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -393,6 +403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: TempCube
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: IsPlayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b851742fcca0e34686ce579e872af1d, type: 3}

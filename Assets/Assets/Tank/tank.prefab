@@ -134,8 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8135600616756828785}
   - component: {fileID: 7264517446310593478}
-  - component: {fileID: 8463337057689549227}
-  - component: {fileID: 6585669706758861136}
+  - component: {fileID: 5786987683127996461}
   m_Layer: 0
   m_Name: tank
   m_TagString: Untagged
@@ -175,7 +174,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8463337057689549227
+--- !u!114 &5786987683127996461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,25 +183,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5096997741912631394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4ebb944e0d9c40428d6965a52d09f66, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d4a46cc818f23d46bd03a0916f14583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UpperPart: {fileID: 4317191119559572050}
---- !u!114 &6585669706758861136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5096997741912631394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff622c2488ed34d4fb58ca5f7f09791f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullet: {fileID: 2868755939255760694, guid: 533cf8c29ad9cfa49a0a60aca6acafd7, type: 3}
   UpperPart: {fileID: 4317191119559572050}
+  Bullet: {fileID: 2868755939255760694, guid: 533cf8c29ad9cfa49a0a60aca6acafd7, type: 3}
   InitBulletPosition: {fileID: 3055330058646424362}
+  IsPlayer: 0
 --- !u!1 &5540601073625418153
 GameObject:
   m_ObjectHideFlags: 0

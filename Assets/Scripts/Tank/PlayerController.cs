@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public GameObject _UpperPart;
+    public GameObject UpperPart;
 
     private Rigidbody _RigidBody;
     private float _Rotation = 30.0f;
@@ -33,7 +33,7 @@ public class Controller : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                Vector3 startPosition = _UpperPart.transform.position;
+                Vector3 startPosition = UpperPart.transform.position;
                 Vector3 endPosition = hit.point;
                 startPosition.y = 0;
                 endPosition.y = 0;
@@ -41,7 +41,7 @@ public class Controller : MonoBehaviour
                 float angle = AngleBetweenTwoPoints(endPosition, startPosition);
                 angle = (360 - angle) + 90;
 
-                _UpperPart.transform.rotation = Quaternion.Euler(new Vector3(-90, angle, 0f));
+                UpperPart.transform.rotation = Quaternion.Euler(new Vector3(-90, angle, 0f));
             }
         }
     }

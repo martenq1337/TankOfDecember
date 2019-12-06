@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameObject Bullet;
-    public GameObject UpperPart;
-    public GameObject InitBulletPosition;
+    public GameObject Bullet { get; set; }
+    public GameObject UpperPart { get; set; }
+    public GameObject InitBulletPosition { get; set; }
 
-    private List<IWeapon> Weapons { get; set; }
+    private List<IWeapon> Weapons;
     private int _SelectedWeapon = 0;
 
     private void Start()
@@ -30,6 +30,7 @@ public class WeaponManager : MonoBehaviour
 
         float force = Weapons[_SelectedWeapon].Force;
         bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -force, 0));
+        //bullet.GetComponent<Rigidbody>().velocity = new Vector3(0, -10, 0);
 
         Destroy(bullet, 5);
     }

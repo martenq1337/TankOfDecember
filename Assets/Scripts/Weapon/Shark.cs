@@ -10,6 +10,6 @@ public class Shark : IWeapon
 
     public Shark()
     {
-        Force = 1500;
+        Force = 500;
     }
 }
