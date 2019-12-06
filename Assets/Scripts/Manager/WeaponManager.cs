@@ -6,6 +6,7 @@ public class WeaponManager : MonoBehaviour
 {
     public GameObject Bullet;
     public GameObject UpperPart;
+    public GameObject InitBulletPosition;
 
     private List<IWeapon> Weapons { get; set; }
 
@@ -17,12 +18,16 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(InitBulletPosition.transform.position);
         if (Input.GetMouseButtonDown(0))
             Shoot();
     }
 
     private void Shoot()
     {
-        Instantiate(Bullet);
+        Quaternion rotation = UpperPart.transform.rotation;
+        GameObject bullet = Instantiate(Bullet, InitBulletPosition.transform.position,rotation);
+
+        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,-1000,0));
     }
 }
