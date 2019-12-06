@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    public GameObject _UpperPart;
+
     private Rigidbody _RigidBody;
     private float _Rotation = 30.0f;
-    private GameObject _UpperPart;
     private RaycastHit hit;
     private int mapLayerMask = 1 << 8;
 
     private void Start()
     {
         _RigidBody = this.GetComponent<Rigidbody>();
-        _UpperPart = GameObject.Find("UpperPart");
     }
 
     private void Update()

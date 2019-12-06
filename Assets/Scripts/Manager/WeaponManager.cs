@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    List<IWeapon> Weapons { get; set; }
+    public GameObject Bullet;
+    public GameObject UpperPart;
+
+    private List<IWeapon> Weapons { get; set; }
 
     private void Start()
     {
@@ -20,6 +23,6 @@ public class WeaponManager : MonoBehaviour
 
     private void Shoot()
     {
-        Debug.Log("BUMM");
+        Instantiate(Bullet);
     }
 }
