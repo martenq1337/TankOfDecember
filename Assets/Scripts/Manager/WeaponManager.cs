@@ -9,6 +9,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject InitBulletPosition;
 
     private List<IWeapon> Weapons { get; set; }
+    private int _SelectedWeapon = 0;
 
     private void Start()
     {
@@ -18,7 +19,6 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(InitBulletPosition.transform.position);
         if (Input.GetMouseButtonDown(0))
             Shoot();
     }
@@ -28,6 +28,9 @@ public class WeaponManager : MonoBehaviour
         Quaternion rotation = UpperPart.transform.rotation;
         GameObject bullet = Instantiate(Bullet, InitBulletPosition.transform.position,rotation);
 
-        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,-1000,0));
+        float force = Weapons[_SelectedWeapon].Force;
+        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -force, 0));
+
+        Destroy(bullet, 5);
     }
 }
