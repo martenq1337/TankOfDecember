@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : TankBase
 {
     public GameObject UpperPart;
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
         //measure the distance from the camera to the map
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit,mapLayerMask))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mapLayerMask))
         {
             if (hit.collider != null)
             {
