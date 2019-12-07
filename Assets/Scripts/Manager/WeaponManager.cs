@@ -8,13 +8,22 @@ public class WeaponManager : MonoBehaviour
     public GameObject UpperPart { get; set; }
     public GameObject InitBulletPosition { get; set; }
 
-    private List<IWeapon> Weapons;
-    private int _SelectedWeapon = 0;
+    private List<IWeapon> _Weapons;
+    private IWeapon _SelectedWeapon;
+    private int _SelectedWeaponId = 0;
+    private float _BulletSpeed = 500;
 
     private void Start()
     {
-        Weapons = new List<IWeapon>();
-        Weapons.Add(new Shark());
+        Push pushWeapon = gameObject.AddComponent<Push>();
+        Pull pullWeapon = gameObject.AddComponent<Pull>();
+        RandomMove randomMoveWeapon = gameObject.AddComponent<RandomMove>();
+
+        _Weapons = new List<IWeapon>()
+        {
+            pushWeapon, pullWeapon, randomMoveWeapon
+        };
+        _SelectedWeapon = _Weapons[_SelectedWeaponId];
     }
 
     private void Update()
@@ -27,10 +36,19 @@ public class WeaponManager : MonoBehaviour
     {
         Quaternion rotation = UpperPart.transform.rotation;
         GameObject bullet = Instantiate(Bullet, InitBulletPosition.transform.position,rotation);
+        bullet.GetComponent<Bullet>().Weapon = _SelectedWeapon;
 
-        float force = Weapons[_SelectedWeapon].Force;
-        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -force, 0));
-        //bullet.GetComponent<Rigidbody>().velocity = new Vector3(0, -10, 0);
+        if(_SelectedWeaponId >= _Weapons.Count-1)
+        {
+            _SelectedWeaponId = 0;
+        }
+        else
+        {
+            _SelectedWeaponId++;
+        }
+        _SelectedWeapon = _Weapons[_SelectedWeaponId]; 
+
+        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -_BulletSpeed, 0));
 
         Destroy(bullet, 5);
     }

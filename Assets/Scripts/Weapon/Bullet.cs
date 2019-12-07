@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public IWeapon Weapon { get; set; }
+    private bool _IsPrinted = false;
+
+    private void Update()
+    {
+        if (!_IsPrinted)
+        {
+            Weapon.Action();
+            _IsPrinted = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }
