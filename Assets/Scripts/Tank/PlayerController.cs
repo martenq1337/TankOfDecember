@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public GameObject UpperPart;
 
     private Rigidbody _RigidBody;
-    private float _Rotation = 30.0f;
+    private float _Rotation = 90.0f;
     private RaycastHit hit;
     private int mapLayerMask = 1 << 8;
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
         //measure the distance from the camera to the map
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit,mapLayerMask))
         {
             if (hit.collider != null)
             {
