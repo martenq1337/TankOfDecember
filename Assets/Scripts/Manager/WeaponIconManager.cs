@@ -41,18 +41,11 @@ public class WeaponIconManager : MonoBehaviour
             _WeaponImageContainer.SelectedPull.gameObject.SetActive(false);
             _WeaponImageContainer.NotSelectedPull.gameObject.SetActive(true);
         }
-        else if (_PreviousSelectedID == 2)
-        {
-            _WeaponImageContainer.SelectedConfusion.gameObject.SetActive(false);
-            _WeaponImageContainer.NotSelectedConfusion.gameObject.SetActive(true);
-        }
 
         if(SelectedWeaponID == 0)
             _WeaponImageContainer.SelectedPush.gameObject.SetActive(true);
         else if (SelectedWeaponID == 1)
             _WeaponImageContainer.SelectedPull.gameObject.SetActive(true);
-        else if(SelectedWeaponID == 2)
-            _WeaponImageContainer.SelectedConfusion.gameObject.SetActive(true);
 
     }
 
@@ -60,6 +53,5 @@ public class WeaponIconManager : MonoBehaviour
     {
         _WeaponImageContainer.SelectedPush.gameObject.SetActive(true);
         _WeaponImageContainer.NotSelectedPull.gameObject.SetActive(true);
-        _WeaponImageContainer.NotSelectedConfusion.gameObject.SetActive(true);
     }
 }

@@ -20,11 +20,10 @@ public class WeaponManager : MonoBehaviour
     {
         Push pushWeapon = gameObject.AddComponent<Push>();
         Pull pullWeapon = gameObject.AddComponent<Pull>();
-        RandomMove randomMoveWeapon = gameObject.AddComponent<RandomMove>();
 
         _Weapons = new List<IWeapon>()
         {
-            pushWeapon, pullWeapon, randomMoveWeapon
+            pushWeapon, pullWeapon
         };
         _SelectedWeapon = _Weapons[_SelectedWeaponId];
 
@@ -43,8 +42,6 @@ public class WeaponManager : MonoBehaviour
                 _SelectedWeaponId = 0;
             else if (Input.GetKeyDown(KeyCode.Alpha2))
                 _SelectedWeaponId = 1;
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-                _SelectedWeaponId = 2;
 
             _SelectedWeapon = _Weapons[_SelectedWeaponId];
             _WeaponIconManager.ChangeIcon(_SelectedWeaponId);
