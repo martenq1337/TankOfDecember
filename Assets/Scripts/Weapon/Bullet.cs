@@ -7,13 +7,27 @@ public class Bullet : MonoBehaviour
     public IWeapon Weapon { get; set; }
     public Vector3 InitPosition { get; set; }
 
+    public GameObject StartShootVFX;
+    public GameObject HitVFX;
+
     private void Awake()
     {
         InitPosition = this.transform.position;
+        StartShootVFX = GameObject.Instantiate(StartShootVFX, transform.position, Quaternion.identity);
+        Destroy(StartShootVFX,3);
+        //StartShootVFX.transform.forward = gameObject.transform.forward;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Weapon.Action(InitPosition, this.transform.position, other.transform.parent.gameObject);
+        if (other.tag == StringContainer.TankTag)
+        {
+            Weapon.Action(InitPosition, this.transform.position, other.transform.parent.gameObject);
+            Destroy(gameObject);
+
+            HitVFX = Instantiate(HitVFX,this.transform.position,Quaternion.identity);
+            ParticleSystem hitParticleSystem = HitVFX.GetComponent<ParticleSystem>();
+            Destroy(HitVFX, hitParticleSystem.main.duration);
+        }
     }
 }

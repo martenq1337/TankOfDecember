@@ -21,7 +21,7 @@ public class ControllerManager : MonoBehaviour
 
             WeaponManager weapon = gameObject.AddComponent<WeaponManager>();
             weapon.UpperPart = this.UpperPart;
-            weapon.Bullet = this.Bullet;
+            weapon.BulletVFX = this.Bullet;
             weapon.InitBulletPosition = this.InitBulletPosition;
 
             WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();

@@ -900,6 +900,12 @@ PrefabInstance:
       propertyPath: IsPlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 2207559636904453889, guid: e76e697979b6ed84da483942ece89fba,
+        type: 3}
     - target: {fileID: 7264517446310593478, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_IsKinematic

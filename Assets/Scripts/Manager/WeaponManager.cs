@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameObject Bullet { get; set; }
+    public GameObject BulletVFX { get; set; }
+    public GameObject BulletStartVFX { get; set; }
     public GameObject UpperPart { get; set; }
     public GameObject InitBulletPosition { get; set; }
 
@@ -53,7 +54,7 @@ public class WeaponManager : MonoBehaviour
     private void Shoot()
     {
         Quaternion rotation = UpperPart.transform.rotation;
-        GameObject bullet = Instantiate(Bullet, InitBulletPosition.transform.position,rotation);
+        GameObject bullet = Instantiate(BulletVFX, InitBulletPosition.transform.position,rotation);
         bullet.GetComponent<Bullet>().Weapon = _SelectedWeapon;
         bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -_BulletSpeed, 0));
 
