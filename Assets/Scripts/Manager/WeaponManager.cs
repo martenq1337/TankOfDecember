@@ -8,6 +8,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject UpperPart { get; set; }
     public GameObject InitBulletPosition { get; set; }
 
+    private WeaponIconManager _WeaponIconManager;
     private List<IWeapon> _Weapons;
     private IWeapon _SelectedWeapon;
     private int _SelectedWeaponId = 0;
@@ -17,13 +18,16 @@ public class WeaponManager : MonoBehaviour
     {
         Push pushWeapon = gameObject.AddComponent<Push>();
         Pull pullWeapon = gameObject.AddComponent<Pull>();
-        //RandomMove randomMoveWeapon = gameObject.AddComponent<RandomMove>();
+        RandomMove randomMoveWeapon = gameObject.AddComponent<RandomMove>();
 
         _Weapons = new List<IWeapon>()
         {
-            pushWeapon, pullWeapon//, randomMoveWeapon
+            pushWeapon, pullWeapon, randomMoveWeapon
         };
         _SelectedWeapon = _Weapons[_SelectedWeaponId];
+
+        _WeaponIconManager = gameObject.GetComponent<WeaponIconManager>();
+        _WeaponIconManager.SelectedWeaponID = _SelectedWeaponId;
     }
 
     private void Update()
@@ -31,12 +35,19 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
             Shoot();
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            _SelectedWeaponId = 0;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            _SelectedWeaponId = 1;
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            _SelectedWeaponId = 2;
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+                _SelectedWeaponId = 0;
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+                _SelectedWeaponId = 1;
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+                _SelectedWeaponId = 2;
+
+            _SelectedWeapon = _Weapons[_SelectedWeaponId];
+            _WeaponIconManager.ChangeIcon(_SelectedWeaponId);
+        }
+
     }
 
     private void Shoot()

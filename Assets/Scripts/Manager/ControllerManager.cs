@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControllerManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ControllerManager : MonoBehaviour
     public GameObject Bullet;
     public GameObject InitBulletPosition;
     public bool IsPlayer = false;
+
+   
 
     private void Awake()
     {
@@ -20,6 +23,8 @@ public class ControllerManager : MonoBehaviour
             weapon.UpperPart = this.UpperPart;
             weapon.Bullet = this.Bullet;
             weapon.InitBulletPosition = this.InitBulletPosition;
+
+            WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
         }
         else
         {
