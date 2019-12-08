@@ -656,7 +656,7 @@ PrefabInstance:
     - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: IsPlayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}

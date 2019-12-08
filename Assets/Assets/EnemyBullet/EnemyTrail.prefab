@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2357034207482501535}
   - component: {fileID: 2357034207482501504}
   m_Layer: 0
-  m_Name: Trail
+  m_Name: EnemyTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,8 +100,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.7260319, b: 0.36320752, a: 0.70980394}
-      key1: {r: 1, g: 0.46095717, b: 0, a: 0}
+      key0: {r: 0.36470592, g: 0.9556117, b: 1, a: 0.70980394}
+      key1: {r: 0, g: 0.2461338, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
