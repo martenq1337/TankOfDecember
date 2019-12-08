@@ -30,6 +30,13 @@ public class WeaponManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
             Shoot();
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            _SelectedWeaponId = 0;
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            _SelectedWeaponId = 1;
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            _SelectedWeaponId = 2;
     }
 
     private void Shoot()
