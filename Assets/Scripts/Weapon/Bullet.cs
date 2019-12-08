@@ -13,9 +13,9 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         InitPosition = this.transform.position;
-        StartShootVFX = GameObject.Instantiate(StartShootVFX, transform.position, Quaternion.identity);
+        StartShootVFX = GameObject.Instantiate(StartShootVFX, transform.position,Quaternion.identity);
+        StartShootVFX.transform.Rotate(new Vector3(0, gameObject.transform.rotation.eulerAngles.y, 0));
         Destroy(StartShootVFX,3);
-        //StartShootVFX.transform.forward = gameObject.transform.forward;
     }
 
     private void OnTriggerEnter(Collider other)
