@@ -27,7 +27,7 @@ public class PlayerController : TankBase
         if (Input.GetKey(KeyCode.D))
             transform.Rotate(new Vector3( 0f, _Rotation * Time.deltaTime, 0f));
 
-        //measure the distance from the camera to the map
+        //measure the distance from the camera to RayCastHitAiming object
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, mapLayerMask))
         {

@@ -5,10 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Pull : MonoBehaviour, IWeapon
+public class Pull : WeaponBase
 {
-    public void Action()
+    public override void Action(Vector3 bulletStartPosition, Vector3 bulletEndPosition, GameObject tank)
     {
-        Debug.Log("Pull");
+        Vector3 bulletDirection = bulletStartPosition - bulletEndPosition;
+        bulletDirection = bulletDirection.normalized;
+        bulletDirection *= Force;
+
+        Rigidbody tankRigidbody = tank.GetComponent<Rigidbody>();
+        tankRigidbody.AddForceAtPosition(bulletDirection, bulletEndPosition, ForceMode.Impulse);
     }
 }

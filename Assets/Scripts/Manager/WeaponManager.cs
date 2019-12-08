@@ -17,11 +17,11 @@ public class WeaponManager : MonoBehaviour
     {
         Push pushWeapon = gameObject.AddComponent<Push>();
         Pull pullWeapon = gameObject.AddComponent<Pull>();
-        RandomMove randomMoveWeapon = gameObject.AddComponent<RandomMove>();
+        //RandomMove randomMoveWeapon = gameObject.AddComponent<RandomMove>();
 
         _Weapons = new List<IWeapon>()
         {
-            pushWeapon, pullWeapon, randomMoveWeapon
+            pushWeapon, pullWeapon//, randomMoveWeapon
         };
         _SelectedWeapon = _Weapons[_SelectedWeaponId];
     }
@@ -37,17 +37,6 @@ public class WeaponManager : MonoBehaviour
         Quaternion rotation = UpperPart.transform.rotation;
         GameObject bullet = Instantiate(Bullet, InitBulletPosition.transform.position,rotation);
         bullet.GetComponent<Bullet>().Weapon = _SelectedWeapon;
-
-        if(_SelectedWeaponId >= _Weapons.Count-1)
-        {
-            _SelectedWeaponId = 0;
-        }
-        else
-        {
-            _SelectedWeaponId++;
-        }
-        _SelectedWeapon = _Weapons[_SelectedWeaponId]; 
-
         bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -_BulletSpeed, 0));
 
         Destroy(bullet, 5);

@@ -1,4 +1,7 @@
-﻿public interface IWeapon 
+﻿using UnityEngine;
+
+public interface IWeapon 
 {
-    void Action();
+    void Action(Vector3 bulletStart, Vector3 bulletEnd, GameObject tank);
+    int Force { get; set; }
 }

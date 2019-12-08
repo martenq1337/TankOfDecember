@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class RandomMove : MonoBehaviour, IWeapon
+class RandomMove //: WeaponBase
 {
-    public void Action()
-    {
-        Debug.Log("RandomMove");
-    }
+    //public override void Action(Vector3 bulletPosition, GameObject bulletDirection)
+    //{
+    //    Debug.Log("RandomMove");
+    //    Debug.Log("Bullet position: " + bullet.transform.position);
+    //    Debug.Log("Tank position: " + tank.transform.position);
+    //}
 }

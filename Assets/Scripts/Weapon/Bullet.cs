@@ -5,19 +5,15 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public IWeapon Weapon { get; set; }
-    private bool _IsPrinted = false;
+    public Vector3 InitPosition { get; set; }
 
-    private void Update()
+    private void Awake()
     {
-        if (!_IsPrinted)
-        {
-            Weapon.Action();
-            _IsPrinted = true;
-        }
+        InitPosition = this.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        Weapon.Action(InitPosition, this.transform.position, other.transform.parent.gameObject);
     }
 }

@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Push : MonoBehaviour, IWeapon
+public class Push : WeaponBase
 {
-    public void Action()
+    public override void Action(Vector3 bulletStartPosition, Vector3 bulletEndPosition, GameObject tank)
     {
-        Debug.Log("Push");
+        Vector3 bulletDirection = bulletEndPosition - bulletStartPosition;
+        bulletDirection = bulletDirection.normalized;
+        bulletDirection *= Force;
+
+        Rigidbody tankRigidbody = tank.GetComponent<Rigidbody>();
+        tankRigidbody.AddForceAtPosition(bulletDirection, bulletEndPosition, ForceMode.Impulse);
     }
 }
