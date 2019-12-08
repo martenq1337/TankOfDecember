@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 8135600616756828785}
   - component: {fileID: 7264517446310593478}
   - component: {fileID: 5786987683127996461}
+  - component: {fileID: 9185220588888797706}
   m_Layer: 0
   m_Name: tank
   m_TagString: Untagged
@@ -190,6 +191,19 @@ MonoBehaviour:
   Bullet: {fileID: 2868755939255760694, guid: 533cf8c29ad9cfa49a0a60aca6acafd7, type: 3}
   InitBulletPosition: {fileID: 3055330058646424362}
   IsPlayer: 0
+--- !u!65 &9185220588888797706
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5096997741912631394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.821389, y: 6.575422, z: 21.583246}
+  m_Center: {x: -0.057282303, y: 4.582543, z: -1.7757328}
 --- !u!1 &5540601073625418153
 GameObject:
   m_ObjectHideFlags: 0

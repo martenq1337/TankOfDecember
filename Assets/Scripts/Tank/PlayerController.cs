@@ -7,9 +7,10 @@ public class PlayerController : TankBase
     public GameObject UpperPart;
 
     private Rigidbody _RigidBody;
-    private float _Rotation = 90.0f;
-    private RaycastHit hit;
-    private int mapLayerMask = 1 << 8;
+    private float _Rotation = 150.0f;
+    private RaycastHit _Hit;
+    private int _MapLayerMask = 1 << 8;
+    private float _Speed = 2;
 
     private void Start()
     {
@@ -19,9 +20,9 @@ public class PlayerController : TankBase
     private void Update()
     {
         if (Input.GetKey(KeyCode.W))
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(Vector3.forward * _Speed * Time.deltaTime);
         if (Input.GetKey(KeyCode.S))
-            transform.Translate(Vector3.back* Time.deltaTime);
+            transform.Translate(Vector3.back * _Speed * Time.deltaTime);
         if (Input.GetKey(KeyCode.A))
             transform.Rotate(new Vector3(0f, -_Rotation * Time.deltaTime, 0f));
         if (Input.GetKey(KeyCode.D))
@@ -29,12 +30,12 @@ public class PlayerController : TankBase
 
         //measure the distance from the camera to RayCastHitAiming object
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mapLayerMask))
+        if (Physics.Raycast(ray, out _Hit, Mathf.Infinity, _MapLayerMask))
         {
-            if (hit.collider != null)
+            if (_Hit.collider != null)
             {
                 Vector3 startPosition = UpperPart.transform.position;
-                Vector3 endPosition = hit.point;
+                Vector3 endPosition = _Hit.point;
                 startPosition.y = 0;
                 endPosition.y = 0;
 

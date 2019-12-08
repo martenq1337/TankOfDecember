@@ -8,4 +8,6 @@ public class StringContainer
 {
     public const string BulletTag = "Bullet";
     public const string TankTag = "Tank";
+    public const string PlayerTag = "Player";
+    public const string EnemyTag = "Enemy";
 }

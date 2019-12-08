@@ -25,6 +25,7 @@ public class ControllerManager : MonoBehaviour
             weapon.InitBulletPosition = this.InitBulletPosition;
 
             WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
+
         }
         else
         {

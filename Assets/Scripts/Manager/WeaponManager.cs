@@ -14,6 +14,7 @@ public class WeaponManager : MonoBehaviour
     private IWeapon _SelectedWeapon;
     private int _SelectedWeaponId = 0;
     private float _BulletSpeed = 500;
+    private float _Timer = 0;
 
     private void Start()
     {
