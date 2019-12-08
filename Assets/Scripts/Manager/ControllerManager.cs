@@ -7,6 +7,8 @@ public class ControllerManager : MonoBehaviour
 {
     public GameObject UpperPart;
     public GameObject Bullet;
+    public GameObject HitVFX;
+    public GameObject MuzzleVFX;
     public GameObject InitBulletPosition;
     public bool IsPlayer = false;
 
@@ -22,6 +24,8 @@ public class ControllerManager : MonoBehaviour
             WeaponManager weapon = gameObject.AddComponent<WeaponManager>();
             weapon.UpperPart = this.UpperPart;
             weapon.BulletVFX = this.Bullet;
+            weapon.HitVFX = this.HitVFX;
+            weapon.MuzzleVFX = this.MuzzleVFX;
             weapon.InitBulletPosition = this.InitBulletPosition;
 
             WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
@@ -29,7 +33,16 @@ public class ControllerManager : MonoBehaviour
         }
         else
         {
-            gameObject.AddComponent<EnemyController>();
+            //PlayerController controller = gameObject.AddComponent<PlayerController>();
+            //controller.UpperPart = this.UpperPart;
+
+            //WeaponManager weapon = gameObject.AddComponent<WeaponManager>();
+            //weapon.UpperPart = this.UpperPart;
+            //weapon.BulletVFX = this.Bullet;
+            //weapon.InitBulletPosition = this.InitBulletPosition;
+
+            //WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
+            //gameObject.AddComponent<EnemyController>();
         }
     }
 }

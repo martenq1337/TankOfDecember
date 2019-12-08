@@ -460,6 +460,12 @@ Transform:
   m_Father: {fileID: 973598492}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &523609453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4317191119559572050, guid: 1b851742fcca0e34686ce579e872af1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 706087339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &568094839
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,8 +656,36 @@ PrefabInstance:
     - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: IsPlayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: InitBulletPosition
+      value: 
+      objectReference: {fileID: 876684344}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: UpperPart
+      value: 
+      objectReference: {fileID: 648530114}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 2207559636904453889, guid: 99babd9310f601c41b7b50ec7f4a55a9,
+        type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: HitVFX
+      value: 
+      objectReference: {fileID: 3122172008980089294, guid: e9f6a9678f7b68a4b9fbb4aa34c6b34b,
+        type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: MuzzleVFX
+      value: 
+      objectReference: {fileID: 7560345001721136130, guid: aa5f0613297ff504fbbb1e9e5c5238fc,
+        type: 3}
     - target: {fileID: 7264517446310593478, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_IsKinematic
@@ -661,6 +695,12 @@ PrefabInstance:
     - {fileID: 8463337057689549227, guid: 1b851742fcca0e34686ce579e872af1d, type: 3}
     - {fileID: 6585669706758861136, guid: 1b851742fcca0e34686ce579e872af1d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b851742fcca0e34686ce579e872af1d, type: 3}
+--- !u!1 &648530114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4317191119559572050, guid: 1b851742fcca0e34686ce579e872af1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 569973875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +880,44 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2207559636904453889, guid: e76e697979b6ed84da483942ece89fba,
         type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: PlayerUpperPart
+      value: 
+      objectReference: {fileID: 523609453}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: PlayerBullet
+      value: 
+      objectReference: {fileID: 2207559636904453889, guid: e76e697979b6ed84da483942ece89fba,
+        type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: PlayerInitBulletPosition
+      value: 
+      objectReference: {fileID: 1319247998}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: InitBulletPosition
+      value: 
+      objectReference: {fileID: 1319247998}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: UpperPart
+      value: 
+      objectReference: {fileID: 523609453}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: HitVFX
+      value: 
+      objectReference: {fileID: 3122172008980089294, guid: 4d97f8b7bbe149e43ac1f34b7fcd99fd,
+        type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: MuzzleVFX
+      value: 
+      objectReference: {fileID: 7560345001721136130, guid: b9141842f77757242be442769c563b4c,
+        type: 3}
     - target: {fileID: 7264517446310593478, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_IsKinematic
@@ -847,6 +925,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b851742fcca0e34686ce579e872af1d, type: 3}
+--- !u!1 &876684344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3055330058646424362, guid: 1b851742fcca0e34686ce579e872af1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 569973875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &944761992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1191,12 @@ Transform:
   m_Father: {fileID: 495594060}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1319247998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3055330058646424362, guid: 1b851742fcca0e34686ce579e872af1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 706087339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1566896444
 GameObject:
   m_ObjectHideFlags: 0

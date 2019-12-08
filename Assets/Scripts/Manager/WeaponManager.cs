@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     public GameObject BulletVFX { get; set; }
-    public GameObject BulletStartVFX { get; set; }
+    public GameObject HitVFX { get; set; }
+    public GameObject MuzzleVFX { get; set; }
     public GameObject UpperPart { get; set; }
     public GameObject InitBulletPosition { get; set; }
 
@@ -54,7 +55,10 @@ public class WeaponManager : MonoBehaviour
         Quaternion rotation = UpperPart.transform.rotation;
         GameObject bullet = Instantiate(BulletVFX, InitBulletPosition.transform.position,rotation);
         bullet.GetComponent<Bullet>().Weapon = _SelectedWeapon;
+        bullet.GetComponent<Bullet>().HitVFX = this.HitVFX;
+        bullet.GetComponent<Bullet>().MuzzleVFX = this.MuzzleVFX;
         bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -_BulletSpeed, 0));
+        bullet.GetComponent<Bullet>().Shoot();
 
         Destroy(bullet, 5);
     }
