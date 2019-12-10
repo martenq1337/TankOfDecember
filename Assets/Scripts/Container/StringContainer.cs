@@ -10,4 +10,8 @@ public class StringContainer
     public const string TankTag = "Tank";
     public const string PlayerTag = "Player";
     public const string EnemyTag = "Enemy";
+    public const string FallOff = "FallOff";
+
+    public const string UpperPart = "UpperPart";
+    public const string LowerPart = "LowerPart";
 }

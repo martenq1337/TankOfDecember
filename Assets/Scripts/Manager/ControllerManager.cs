@@ -12,8 +12,6 @@ public class ControllerManager : MonoBehaviour
     public GameObject InitBulletPosition;
     public bool IsPlayer = false;
 
-   
-
     private void Awake()
     {
         if (IsPlayer)
@@ -30,6 +28,7 @@ public class ControllerManager : MonoBehaviour
 
             WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
 
+            
         }
         else
         {
@@ -43,6 +42,13 @@ public class ControllerManager : MonoBehaviour
 
             //WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
             //gameObject.AddComponent<EnemyController>();
+
         }
+
+        PositionManager positionManager = gameObject.AddComponent<PositionManager>();
+        positionManager.SetParameters(this.gameObject);
+
+
+
     }
 }
