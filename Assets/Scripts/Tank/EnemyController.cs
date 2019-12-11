@@ -1,18 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : TankBase
 {
-    // Start is called before the first frame update
-    void Start()
+    private NavMeshAgent _Agent;
+    private Vector3 _PreviousPosition;
+    private Vector3 _Destination;
+
+    private void Awake()
     {
-        
+        _Agent = GetComponent<NavMeshAgent>();
+        //_Destination = ScoreManager._EnemySpawnedObject.transform.position;
+        //_PreviousPosition = _Destination;
+        //_Agent.SetDestination(_Destination);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _Destination = ScoreManager._EnemySpawnedObject.transform.position;
+
+        if (_PreviousPosition != _Destination)
+        {
+            _Agent.SetDestination(_Destination);
+            _PreviousPosition = _Destination;
+        } 
     }
 }

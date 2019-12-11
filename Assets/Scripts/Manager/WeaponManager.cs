@@ -16,6 +16,8 @@ public class WeaponManager : MonoBehaviour
     private int _SelectedWeaponId = 0;
     private float _BulletSpeed = 500;
     private float _Timer = 0;
+    private float _TimeToShoot = 0;
+    private bool _CanShoot = true;
 
     private void Start()
     {
@@ -30,12 +32,17 @@ public class WeaponManager : MonoBehaviour
 
         _WeaponIconManager = gameObject.GetComponent<WeaponIconManager>();
         _WeaponIconManager.SelectedWeaponID = _SelectedWeaponId;
+        _TimeToShoot = _Weapons[_SelectedWeaponId].Timer;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (_CanShoot && Input.GetMouseButton(0))
+        {
             Shoot();
+            _CanShoot = false;
+            _Timer = 0;
+        }
 
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -48,6 +55,17 @@ public class WeaponManager : MonoBehaviour
             _WeaponIconManager.ChangeIcon(_SelectedWeaponId);
         }
 
+        CountDown();
+
+    }
+
+    private void CountDown()
+    {
+        _Timer += Time.deltaTime;
+        if (_Timer >= _TimeToShoot)
+        {
+            _CanShoot = true;
+        }
     }
 
     private void Shoot()

@@ -32,6 +32,7 @@ public class ControllerManager : MonoBehaviour
         }
         else
         {
+            EnemyController controller = gameObject.AddComponent<EnemyController>();
             //PlayerController controller = gameObject.AddComponent<PlayerController>();
             //controller.UpperPart = this.UpperPart;
 

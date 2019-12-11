@@ -18,12 +18,12 @@ public class ScoreManager : MonoBehaviour
     private int _EnemyRandomIndex;
 
     private GameObject _PlayerSpawnedObject;
-    private GameObject _EnemySpawnedObject;
+    public static GameObject _EnemySpawnedObject;
 
     private int _PlayerPreviousScore = 0;
     private int _EnemyPreviousScore = 0;
 
-    void Start()
+    void Awake()
     {
         _PlayerScorePositions = new List<Vector3>();
         _EnemyScorePositions = new List<Vector3>();
