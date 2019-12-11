@@ -27,7 +27,12 @@ public class ScoreItemRotator : MonoBehaviour
         {
             Vector3 position = PlayerScoreItem.transform.position;
             position.x = position.x + (3 * _PlayerPrevScore);
-            GameObject scoreItem = Instantiate(PlayerScoreItem, position, Quaternion.identity);
+            Quaternion rotation = PlayerScoreItem.transform.rotation;
+            if(_PlayerScores.Count != 0)
+            {
+                rotation = _PlayerScores[0].transform.rotation;
+            }
+            GameObject scoreItem = Instantiate(PlayerScoreItem, position, rotation);
             _PlayerScores.Add(scoreItem);
             _PlayerPrevScore++;
         }
@@ -36,7 +41,12 @@ public class ScoreItemRotator : MonoBehaviour
         {
             Vector3 position = EnemyScoreItem.transform.position;
             position.x = position.x + (3 * _PlayerPrevScore);
-            GameObject scoreItem = Instantiate(EnemyScoreItem, position, Quaternion.identity);
+            Quaternion rotation = PlayerScoreItem.transform.rotation;
+            if (_EnemyScores.Count != 0)
+            {
+                rotation = _EnemyScores[0].transform.rotation;
+            }
+            GameObject scoreItem = Instantiate(EnemyScoreItem, position, rotation);
             _EnemyScores.Add(scoreItem);
             _EnemyPrevScore++;
         }
