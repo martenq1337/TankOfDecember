@@ -920,7 +920,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 9.1837e-41, w: -9.05e-43}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1275,6 +1275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973598492}
   - component: {fileID: 973598493}
+  - component: {fileID: 973598494}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -1316,6 +1317,22 @@ MonoBehaviour:
   PlayerScorePositionParent: {fileID: 495594059}
   EnemyItemToPickup: {fileID: 1072551270}
   EnemyScorePositionParent: {fileID: 34017766}
+--- !u!114 &973598494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973598491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22272ab18d9ac8d40a9938b2a16b1188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerScoreItem: {fileID: 63705540471407813, guid: 2194c5ebf387f5c418b4bbec7b383c3b,
+    type: 3}
+  EnemyScoreItem: {fileID: 5228334454968707290, guid: e9c99cb4a2ccdd54f8158f526723258e,
+    type: 3}
 --- !u!1 &1046175756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 779.0432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977655665293179077, guid: e2ef7f0a24dbbd441bdf6cccba3ada5c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ef7f0a24dbbd441bdf6cccba3ada5c, type: 3}
