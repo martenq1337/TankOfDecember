@@ -40,7 +40,7 @@ public class ScoreItemRotator : MonoBehaviour
         if (_PlayerPrevScore < _MaxScore &&_EnemyPrevScore != ScoreManager.EnemyScore)
         {
             Vector3 position = EnemyScoreItem.transform.position;
-            position.x = position.x + (3 * _PlayerPrevScore);
+            position.x = position.x + (3 * _EnemyPrevScore);
             Quaternion rotation = PlayerScoreItem.transform.rotation;
             if (_EnemyScores.Count != 0)
             {
