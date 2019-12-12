@@ -702,7 +702,7 @@ PrefabInstance:
     - target: {fileID: 8135600616756828785, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.036
+      value: 0.021
       objectReference: {fileID: 0}
     - target: {fileID: 8135600616756828785, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
@@ -970,7 +970,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0.0390625, y: 0.1015625, z: 0.02734375, w: -0.03125}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1488,6 +1488,24 @@ MonoBehaviour:
     type: 3}
   EnemyScoreItem: {fileID: 5228334454968707290, guid: e9c99cb4a2ccdd54f8158f526723258e,
     type: 3}
+--- !u!1 &1039337343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4125972943138580180, guid: e2ef7f0a24dbbd441bdf6cccba3ada5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5589638900393863721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1039337347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039337343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dced1a9eb478947b6d4f76da2e3ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046175756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,14 +1710,14 @@ NavMeshAgent:
   m_GameObject: {fileID: 1143051142}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 0.35
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
@@ -2279,6 +2297,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4125972943138580180, guid: e2ef7f0a24dbbd441bdf6cccba3ada5c,
+        type: 3}
+      propertyPath: m_TagString
+      value: NavMesh
+      objectReference: {fileID: 0}
     - target: {fileID: 1087970401628394695, guid: e2ef7f0a24dbbd441bdf6cccba3ada5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2352,6 +2375,11 @@ PrefabInstance:
     - target: {fileID: 5977655665293179077, guid: e2ef7f0a24dbbd441bdf6cccba3ada5c,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223506213164669715, guid: e2ef7f0a24dbbd441bdf6cccba3ada5c,
+        type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

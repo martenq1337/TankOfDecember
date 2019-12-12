@@ -28,6 +28,7 @@ public class PositionManager : MonoBehaviour
         _SavedTankRotation = _Tank.transform.rotation;
         _SavedUpperPartRotation = tankGameObject.transform.Find(StringContainer.UpperPart).gameObject.transform.rotation;
         _SavedLowerPartRotation = tankGameObject.transform.Find(StringContainer.LowerPart).gameObject.transform.rotation;
+
     }
 
    
@@ -39,5 +40,8 @@ public class PositionManager : MonoBehaviour
         _UpperPart.transform.rotation = _SavedUpperPartRotation;
         _LowerPart.transform.position = _SavedLowerPartPosition;
         _LowerPart.transform.rotation = _SavedLowerPartRotation;
+        _Tank.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        _Tank.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
     }
 }

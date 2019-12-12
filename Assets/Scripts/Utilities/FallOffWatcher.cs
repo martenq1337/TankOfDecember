@@ -9,6 +9,7 @@ public class FallOffWatcher : MonoBehaviour
         if (other.tag == StringContainer.EnemyTag)
         {
             other.GetComponent<PositionManager>().ResetPosition();
+            other.GetComponent<EnemyController>().FixTank();
         }
 
         if (other.tag == StringContainer.PlayerTag)

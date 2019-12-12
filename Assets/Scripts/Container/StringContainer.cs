@@ -14,4 +14,6 @@ public class StringContainer
 
     public const string UpperPart = "UpperPart";
     public const string LowerPart = "LowerPart";
+
+    public const string NavMesh = "NavMesh";
 }

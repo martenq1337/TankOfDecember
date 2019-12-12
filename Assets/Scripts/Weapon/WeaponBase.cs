@@ -11,9 +11,11 @@ public abstract class WeaponBase : MonoBehaviour, IWeapon
     public float Timer { get; set; }
     public abstract void Action(Vector3 bulletDirection, Vector3 bulletEndPosition, GameObject tank);
 
+
     public WeaponBase()
     {
-        Timer = 0.3f;
+        Timer = .5f;
         Force = 2;
     }
+
 }

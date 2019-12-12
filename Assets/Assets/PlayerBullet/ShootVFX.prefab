@@ -4801,8 +4801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba363cf5936b454bbe1a3d5061d7c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartShootVFX: {fileID: 7560345001721136130, guid: b9141842f77757242be442769c563b4c,
-    type: 3}
+  MuzzleVFX: {fileID: 0}
   HitVFX: {fileID: 3122172008980089294, guid: 4d97f8b7bbe149e43ac1f34b7fcd99fd, type: 3}
 --- !u!135 &554026427254965273
 SphereCollider:
