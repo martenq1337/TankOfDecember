@@ -15,6 +15,7 @@ public class PositionManager : MonoBehaviour
     private GameObject _LowerPart;
     private GameObject _UpperPart;
 
+    //save start position, rotation
     public void SetParameters(GameObject tankGameObject)
     {
         _Tank = tankGameObject;
@@ -31,7 +32,7 @@ public class PositionManager : MonoBehaviour
 
     }
 
-   
+    //reset if the tank falls down
     public void ResetPosition()
     {
         _Tank.transform.position = _SavedTankPosition;

@@ -25,8 +25,6 @@ public class ControllerManager : MonoBehaviour
             weapon.HitVFX = this.HitVFX;
             weapon.MuzzleVFX = this.MuzzleVFX;
             weapon.InitBulletPosition = this.InitBulletPosition;
-
-            WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
         }
         else
         {

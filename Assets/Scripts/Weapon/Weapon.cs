@@ -5,14 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public abstract class WeaponBase : MonoBehaviour, IWeapon
+public class Weapon : MonoBehaviour, IWeapon
 {
     public int Force { get; set; }
     public float Timer { get; set; }
-    public abstract void Action(Vector3 bulletDirection, Vector3 bulletEndPosition, GameObject tank);
 
-
-    public WeaponBase()
+    public Weapon()
     {
         Timer = .5f;
         Force = 2;

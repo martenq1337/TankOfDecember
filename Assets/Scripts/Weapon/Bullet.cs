@@ -27,12 +27,17 @@ public class Bullet : MonoBehaviour
     {
         if (other.tag == StringContainer.TankTag)
         {
-            Weapon.Action(InitPosition, this.transform.position, other.transform.parent.gameObject);
-
             HitVFX = Instantiate(HitVFX, this.transform.position, Quaternion.identity);
             ParticleSystem hitParticleSystem = HitVFX.GetComponent<ParticleSystem>();
             Destroy(HitVFX, 1.5f);
             Destroy(gameObject);
+
+            string tag = other.transform.parent.gameObject.tag;
+
+            if (tag == StringContainer.PlayerTag)
+                ScoreManager.EnemyShootScore++;
+            if (tag == StringContainer.EnemyTag)
+                ScoreManager.PlayerShootScore++;
         }
     }
 }

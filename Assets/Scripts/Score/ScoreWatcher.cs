@@ -8,11 +8,11 @@ public class ScoreWatcher : MonoBehaviour
     {
         if (other.tag == StringContainer.PlayerTag)
         {
-            ScoreManager.PlayerScore++;
+            ScoreManager.PlayerBoxScore+=6;
         }
         else if (other.tag == StringContainer.EnemyTag)
         {
-            ScoreManager.EnemyScore++;
+            ScoreManager.EnemyBoxScore+=6;
         }
     }
 }

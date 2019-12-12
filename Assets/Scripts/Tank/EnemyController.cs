@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public static bool CanMove = true;
-
     private NavMeshAgent _Agent;
     private Vector3 _Destination;
     private bool _IsDestinationSet = false;
@@ -25,37 +23,19 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_Agent.isOnNavMesh);
-
-        if (CanMove)
+        //if destination is not set, then we set it
+        if (!_IsDestinationSet)
         {
-            _Agent.enabled = true;
-            if (_Agent.isOnNavMesh)
-            {
-                //if (!_IsDestinationSet)
-                //{
-                //    _Destination = ScoreManager._EnemySpawnedObject.transform.position;
-                //    _Agent.SetDestination(_Destination);
-                //    _IsDestinationSet = true;
-                //}
-                _Destination = ScoreManager._EnemySpawnedObject.transform.position;
-                _Agent.SetDestination(_Destination);
-                //_IsDestinationSet = true;
-
-                _Agent.isStopped = false;
-            }
-        }
-        else
-        {
-            if (_Agent.enabled && _Agent.isOnNavMesh)
-                _Agent.isStopped = true;
-            _Agent.enabled = false;
+            _Destination = ScoreManager._EnemySpawnedObject.transform.position;
+            _Agent.SetDestination(_Destination);
+            _IsDestinationSet = true;
         }
 
-        if (_PreviousScore != ScoreManager.EnemyScore)
+        //if the score changes, we need a new destination
+        if (_PreviousScore != ScoreManager.EnemyBoxScore)
         {
             _IsDestinationSet = false;
-            _PreviousScore = ScoreManager.EnemyScore;
+            _PreviousScore = ScoreManager.EnemyBoxScore;
         }
     }
 }

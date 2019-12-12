@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -9,8 +10,14 @@ public class ScoreManager : MonoBehaviour
     public GameObject EnemyItemToPickup;
     public GameObject EnemyScorePositionParent;
 
-    public static int PlayerScore = 0;
-    public static int EnemyScore = 0;
+    public Text PlayerScoreText;
+    public Text EnemyScoreText;
+
+    public static int PlayerBoxScore = 0;
+    public static int EnemyBoxScore = 0;
+
+    public static int PlayerShootScore = 0;
+    public static int EnemyShootScore = 0;
 
     private List<Vector3> _PlayerScorePositions;
     private List<Vector3> _EnemyScorePositions;
@@ -43,15 +50,15 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (_PlayerPreviousScore != PlayerScore)
+        if (_PlayerPreviousScore != PlayerBoxScore)
         {
-            _PlayerPreviousScore = PlayerScore;
+            _PlayerPreviousScore = PlayerBoxScore;
             SpawnObject(PlayerItemToPickup, ref _PlayerSpawnedObject, _PlayerRandomIndex, _PlayerScorePositions);
         }
 
-        if (_EnemyPreviousScore != EnemyScore)
+        if (_EnemyPreviousScore != EnemyBoxScore)
         {
-            _EnemyPreviousScore = EnemyScore;
+            _EnemyPreviousScore = EnemyBoxScore;
             SpawnObject(EnemyItemToPickup, ref _EnemySpawnedObject, _EnemyRandomIndex, _EnemyScorePositions);
         }
 
@@ -73,5 +80,11 @@ public class ScoreManager : MonoBehaviour
         spawnedObject.AddComponent<ScoreWatcher>();
     }
 
-   
+    private void OnGUI()
+    {
+        PlayerScoreText.text = (PlayerBoxScore + PlayerShootScore).ToString();
+        EnemyScoreText.text = (EnemyBoxScore + EnemyShootScore).ToString();
+    }
+
+
 }
