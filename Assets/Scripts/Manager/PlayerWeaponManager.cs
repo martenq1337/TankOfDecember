@@ -18,4 +18,17 @@ class PlayerWeaponManager : WeaponManagerBase
 
         CountDown();
     }
+
+    protected sealed override void Shoot()
+    {
+        Quaternion rotation = UpperPart.transform.rotation;
+        GameObject bullet = Instantiate(BulletVFX, InitBulletPosition.transform.position, rotation);
+        bullet.GetComponent<Bullet>().Weapon = _Weapon;
+        bullet.GetComponent<Bullet>().HitVFX = this.HitVFX;
+        bullet.GetComponent<Bullet>().MuzzleVFX = this.MuzzleVFX;
+        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -_BulletSpeed, 0));
+        bullet.GetComponent<Bullet>().Shoot();
+
+        Destroy(bullet, 5);
+    }
 }

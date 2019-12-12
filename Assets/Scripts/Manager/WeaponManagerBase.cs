@@ -10,20 +10,19 @@ public abstract class WeaponManagerBase : MonoBehaviour
     public GameObject UpperPart { get; set; }
     public GameObject InitBulletPosition { get; set; }
 
-    private IWeapon _Weapon;
-    private float _BulletSpeed = 500;
     private float _TimeToShoot = 0f;
 
     protected bool _CanShoot = true;
+    protected IWeapon _Weapon;
     protected float _Timer = 0;
+    protected float _BulletSpeed = 500;
+
 
     private void Start()
     {
         _Weapon = gameObject.AddComponent<Weapon>();
         _TimeToShoot = _Weapon.Timer;
     }
-
-    
 
     protected void CountDown()
     {
@@ -34,17 +33,7 @@ public abstract class WeaponManagerBase : MonoBehaviour
         }
     }
 
-    protected void Shoot()
-    {
-        Quaternion rotation = UpperPart.transform.rotation;
-        GameObject bullet = Instantiate(BulletVFX, InitBulletPosition.transform.position,rotation);
-        bullet.GetComponent<Bullet>().Weapon = _Weapon;
-        bullet.GetComponent<Bullet>().HitVFX = this.HitVFX;
-        bullet.GetComponent<Bullet>().MuzzleVFX = this.MuzzleVFX;
-        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, -_BulletSpeed, 0));
-        bullet.GetComponent<Bullet>().Shoot();
-
-        Destroy(bullet, 5);
-    }
+    protected abstract void Shoot();
+    
 
 }

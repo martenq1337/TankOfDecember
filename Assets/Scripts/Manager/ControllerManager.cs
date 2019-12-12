@@ -29,6 +29,14 @@ public class ControllerManager : MonoBehaviour
         else
         {
             EnemyController controller = gameObject.AddComponent<EnemyController>();
+            controller.UpperPart = this.UpperPart;
+
+            EnemyWeaponManager enemyWeaponManager = gameObject.AddComponent<EnemyWeaponManager>();
+            enemyWeaponManager.UpperPart = this.UpperPart;
+            enemyWeaponManager.BulletVFX = this.Bullet;
+            enemyWeaponManager.HitVFX = this.HitVFX;
+            enemyWeaponManager.MuzzleVFX = this.MuzzleVFX;
+            enemyWeaponManager.InitBulletPosition = this.InitBulletPosition;
         }
 
         PositionManager positionManager = gameObject.AddComponent<PositionManager>();
