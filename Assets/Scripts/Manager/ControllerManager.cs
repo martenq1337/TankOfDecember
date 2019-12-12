@@ -27,29 +27,14 @@ public class ControllerManager : MonoBehaviour
             weapon.InitBulletPosition = this.InitBulletPosition;
 
             WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
-
-            
         }
         else
         {
             EnemyController controller = gameObject.AddComponent<EnemyController>();
-            //PlayerController controller = gameObject.AddComponent<PlayerController>();
-            //controller.UpperPart = this.UpperPart;
-
-            //WeaponManager weapon = gameObject.AddComponent<WeaponManager>();
-            //weapon.UpperPart = this.UpperPart;
-            //weapon.BulletVFX = this.Bullet;
-            //weapon.InitBulletPosition = this.InitBulletPosition;
-
-            //WeaponIconManager weaponIconManager = gameObject.AddComponent<WeaponIconManager>();
-            //gameObject.AddComponent<EnemyController>();
-
         }
 
         PositionManager positionManager = gameObject.AddComponent<PositionManager>();
         positionManager.SetParameters(this.gameObject);
-
-
 
     }
 }

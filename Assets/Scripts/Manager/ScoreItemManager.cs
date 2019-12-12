@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreItemRotator : MonoBehaviour
+public class ScoreItemManager : MonoBehaviour
 {
     public GameObject PlayerScoreItem;
     public GameObject EnemyScoreItem;

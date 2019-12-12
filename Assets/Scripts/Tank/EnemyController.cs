@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : TankBase
+public class EnemyController : MonoBehaviour
 {
     public static bool CanMove = true;
 

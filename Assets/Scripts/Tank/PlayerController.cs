@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : TankBase
+public class PlayerController : MonoBehaviour
 {
     public GameObject UpperPart;
 
