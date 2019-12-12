@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
+public abstract class WeaponManagerBase : MonoBehaviour
 {
     public GameObject BulletVFX { get; set; }
     public GameObject HitVFX { get; set; }
@@ -12,9 +12,10 @@ public class WeaponManager : MonoBehaviour
 
     private IWeapon _Weapon;
     private float _BulletSpeed = 500;
-    private float _Timer = 0;
     private float _TimeToShoot = 0f;
-    private bool _CanShoot = true;
+
+    protected bool _CanShoot = true;
+    protected float _Timer = 0;
 
     private void Start()
     {
@@ -22,19 +23,9 @@ public class WeaponManager : MonoBehaviour
         _TimeToShoot = _Weapon.Timer;
     }
 
-    private void Update()
-    {
-        if (_CanShoot && Input.GetMouseButton(0))
-        {
-            Shoot();
-            _CanShoot = false;
-            _Timer = 0;
-        }
+    
 
-        CountDown();
-    }
-
-    private void CountDown()
+    protected void CountDown()
     {
         _Timer += Time.deltaTime;
         if (_Timer >= _TimeToShoot)
@@ -43,7 +34,7 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    protected void Shoot()
     {
         Quaternion rotation = UpperPart.transform.rotation;
         GameObject bullet = Instantiate(BulletVFX, InitBulletPosition.transform.position,rotation);
@@ -55,4 +46,5 @@ public class WeaponManager : MonoBehaviour
 
         Destroy(bullet, 5);
     }
+
 }

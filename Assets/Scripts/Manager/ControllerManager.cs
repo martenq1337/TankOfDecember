@@ -19,12 +19,12 @@ public class ControllerManager : MonoBehaviour
             PlayerController controller = gameObject.AddComponent<PlayerController>();
             controller.UpperPart = this.UpperPart;
 
-            WeaponManager weapon = gameObject.AddComponent<WeaponManager>();
-            weapon.UpperPart = this.UpperPart;
-            weapon.BulletVFX = this.Bullet;
-            weapon.HitVFX = this.HitVFX;
-            weapon.MuzzleVFX = this.MuzzleVFX;
-            weapon.InitBulletPosition = this.InitBulletPosition;
+            PlayerWeaponManager playerWeaponManager = gameObject.AddComponent<PlayerWeaponManager>();
+            playerWeaponManager.UpperPart = this.UpperPart;
+            playerWeaponManager.BulletVFX = this.Bullet;
+            playerWeaponManager.HitVFX = this.HitVFX;
+            playerWeaponManager.MuzzleVFX = this.MuzzleVFX;
+            playerWeaponManager.InitBulletPosition = this.InitBulletPosition;
         }
         else
         {
