@@ -37,7 +37,7 @@ public class ScoreItemManager : MonoBehaviour
             _PlayerPrevScore++;
         }
 
-        if (_PlayerPrevScore < _MaxScore &&_EnemyPrevScore != ScoreManager.EnemyScore)
+        if (_EnemyPrevScore < _MaxScore &&_EnemyPrevScore != ScoreManager.EnemyScore)
         {
             Vector3 position = EnemyScoreItem.transform.position;
             position.x = position.x + (3 * _EnemyPrevScore);
