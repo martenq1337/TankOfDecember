@@ -12,7 +12,20 @@ public class ControllerManager : MonoBehaviour
     public GameObject InitBulletPosition;
     public bool IsPlayer = false;
 
-    private void Awake()
+    private bool _Activated = false;
+    private float _Timer = 0f;
+    
+    private void Update()
+    {
+        _Timer += Time.deltaTime;
+        if (_Timer>=3.0 && !_Activated)
+        {
+            _Activated = true;
+            Init();
+        }
+    }
+    //private void Awake()
+    private void Init()
     {
         if (IsPlayer)
         {
