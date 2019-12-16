@@ -14,6 +14,7 @@ class PlayerWeaponManager : WeaponManagerBase
             Shoot();
             _CanShoot = false;
             _Timer = 0;
+            _AudioSource.Play();
         }
 
         CountDown();

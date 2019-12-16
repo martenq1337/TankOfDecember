@@ -9,6 +9,8 @@ public abstract class WeaponManagerBase : MonoBehaviour
     public GameObject MuzzleVFX { get; set; }
     public GameObject UpperPart { get; set; }
     public GameObject InitBulletPosition { get; set; }
+    public AudioClip ShootSound;
+    protected AudioSource _AudioSource;
 
     private float _TimeToShoot = 0f;
 
@@ -22,6 +24,9 @@ public abstract class WeaponManagerBase : MonoBehaviour
     {
         _Weapon = gameObject.AddComponent<Weapon>();
         _TimeToShoot = _Weapon.Timer;
+        _AudioSource = gameObject.AddComponent<AudioSource>();
+        _AudioSource.clip = ShootSound;
+        _AudioSource.volume = .15f;
     }
 
     protected void CountDown()

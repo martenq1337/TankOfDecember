@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    public AudioClip PickUpCoin;
+    private AudioSource _AudioSource;
+
     public GameObject PlayerItemToPickup;
     public GameObject PlayerScorePositionParent;
     public GameObject EnemyItemToPickup;
@@ -34,6 +37,10 @@ public class ScoreManager : MonoBehaviour
 
     void Awake()
     {
+        _AudioSource = gameObject.AddComponent<AudioSource>();
+        _AudioSource.clip = PickUpCoin;
+        _AudioSource.volume = .3f;
+
         PlayerScoreText.enabled = false;
         EnemyScoreText.enabled = false;
 
@@ -66,12 +73,14 @@ public class ScoreManager : MonoBehaviour
         {
             _PlayerPreviousScore = PlayerBoxScore;
             SpawnObject(PlayerItemToPickup, ref _PlayerSpawnedObject, _PlayerRandomIndex, _PlayerScorePositions);
+            _AudioSource.Play();
         }
 
         if (_EnemyPreviousScore != EnemyBoxScore)
         {
             _EnemyPreviousScore = EnemyBoxScore;
             SpawnObject(EnemyItemToPickup, ref _EnemySpawnedObject, _EnemyRandomIndex, _EnemyScorePositions);
+            _AudioSource.Play();
         }
 
     }

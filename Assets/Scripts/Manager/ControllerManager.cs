@@ -12,6 +12,8 @@ public class ControllerManager : MonoBehaviour
     public GameObject InitBulletPosition;
     public bool IsPlayer = false;
 
+    public AudioClip Shoot;
+
     public static float Timer = 0f;
     public static bool Activated = false;
     public static readonly float SleepTime = 5.0f;
@@ -43,6 +45,7 @@ public class ControllerManager : MonoBehaviour
             playerWeaponManager.HitVFX = this.HitVFX;
             playerWeaponManager.MuzzleVFX = this.MuzzleVFX;
             playerWeaponManager.InitBulletPosition = this.InitBulletPosition;
+            playerWeaponManager.ShootSound = Shoot;
         }
         else
         {
@@ -55,6 +58,7 @@ public class ControllerManager : MonoBehaviour
             enemyWeaponManager.HitVFX = this.HitVFX;
             enemyWeaponManager.MuzzleVFX = this.MuzzleVFX;
             enemyWeaponManager.InitBulletPosition = this.InitBulletPosition;
+            enemyWeaponManager.ShootSound = Shoot;
         }
 
         PositionManager positionManager = gameObject.AddComponent<PositionManager>();

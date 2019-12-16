@@ -688,6 +688,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7560345001721136130, guid: aa5f0613297ff504fbbb1e9e5c5238fc,
         type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: Shoot
+      value: 
+      objectReference: {fileID: 8300000, guid: ed23afe6ac9fdea4b9586e169862ed7b, type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: PickCoin
+      value: 
+      objectReference: {fileID: 8300000, guid: f8e26fcdfa4ac944da970388b35c08d4, type: 3}
     - target: {fileID: 7264517446310593478, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_IsKinematic
@@ -990,6 +1000,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7560345001721136130, guid: b9141842f77757242be442769c563b4c,
         type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: Shoot
+      value: 
+      objectReference: {fileID: 8300000, guid: ed23afe6ac9fdea4b9586e169862ed7b, type: 3}
+    - target: {fileID: 5786987683127996461, guid: 1b851742fcca0e34686ce579e872af1d,
+        type: 3}
+      propertyPath: PickCoin
+      value: 
+      objectReference: {fileID: 8300000, guid: f8e26fcdfa4ac944da970388b35c08d4, type: 3}
     - target: {fileID: 7264517446310593478, guid: 1b851742fcca0e34686ce579e872af1d,
         type: 3}
       propertyPath: m_IsKinematic
@@ -1356,6 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cd55ea7b718341807b2b0ef3ae0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickUpCoin: {fileID: 8300000, guid: f8e26fcdfa4ac944da970388b35c08d4, type: 3}
   PlayerItemToPickup: {fileID: 1578851161}
   PlayerScorePositionParent: {fileID: 495594059}
   EnemyItemToPickup: {fileID: 1072551270}
