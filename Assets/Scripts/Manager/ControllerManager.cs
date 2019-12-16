@@ -12,15 +12,20 @@ public class ControllerManager : MonoBehaviour
     public GameObject InitBulletPosition;
     public bool IsPlayer = false;
 
-    private bool _Activated = false;
-    private float _Timer = 0f;
-    
+    public static float Timer = 0f;
+    public static bool Activated = false;
+    public static readonly float SleepTime = 5.0f;
+
+    private bool _IsLocalActivated = false;
+
+
     private void Update()
     {
-        _Timer += Time.deltaTime;
-        if (_Timer>=3.0 && !_Activated)
+        Timer += Time.deltaTime;
+        if (Timer >= SleepTime && !_IsLocalActivated)
         {
-            _Activated = true;
+            _IsLocalActivated = true;
+            Activated = true;
             Init();
         }
     }

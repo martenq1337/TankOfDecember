@@ -30,8 +30,13 @@ public class ScoreManager : MonoBehaviour
     private int _PlayerPreviousScore = 0;
     private int _EnemyPreviousScore = 0;
 
+    private bool _IsTextActivated = false;
+
     void Awake()
     {
+        PlayerScoreText.enabled = false;
+        EnemyScoreText.enabled = false;
+
         _PlayerScorePositions = new List<Vector3>();
         _EnemyScorePositions = new List<Vector3>();
 
@@ -50,6 +55,13 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
+        if (ControllerManager.Activated && !_IsTextActivated)
+        {
+            _IsTextActivated = true;
+            PlayerScoreText.enabled = true;
+            EnemyScoreText.enabled = true;
+        }
+
         if (_PlayerPreviousScore != PlayerBoxScore)
         {
             _PlayerPreviousScore = PlayerBoxScore;
