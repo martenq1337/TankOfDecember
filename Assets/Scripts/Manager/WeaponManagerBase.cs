@@ -26,7 +26,7 @@ public abstract class WeaponManagerBase : MonoBehaviour
         _TimeToShoot = _Weapon.Timer;
         _AudioSource = gameObject.AddComponent<AudioSource>();
         _AudioSource.clip = ShootSound;
-        _AudioSource.volume = .15f;
+        _AudioSource.volume = .35f;
     }
 
     protected void CountDown()
